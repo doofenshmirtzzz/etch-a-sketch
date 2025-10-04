@@ -86,3 +86,11 @@ button:active {
   flex-direction: column;
   align-items: center;
 }
+
+#grid {
+  width: 500px;
+  height: 500px;
+  
+  border: 4px dashed #202020;
+}
+}
