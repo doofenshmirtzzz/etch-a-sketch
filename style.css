@@ -29,7 +29,9 @@ body {
 }
 
 h1 {
-  margin: 0 0 42px 32px;
+  margin: 0;
+  margin-bottom: 32px;
+  margin-left: 1ch;
 }
 
 #buttons {
