@@ -19,6 +19,9 @@ function setGridDimension(n, target) {
 }
 
 function changeColor(target, gradient) {
+  // do not change if target is container
+  if (target.id) return;
+
   const currentColor = rgbToHex(target.style.backgroundColor || 'rgb(41, 41, 41)');
 
   target.style.backgroundColor = returnNextColor(gradient, currentColor)
