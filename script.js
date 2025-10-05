@@ -10,6 +10,8 @@ function createGrid(size, target) {
     const newDiv = document.createElement('div');
     target.appendChild(newDiv);
   }
+
+  // add reseting the container for future 
 }
 
 function setGridDimension(n, target) {
