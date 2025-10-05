@@ -106,7 +106,8 @@ button:active {
   /* slightly painful without using css grid */
 
   box-sizing: border-box;
-  border: 1px solid red;
+  border: 1px solid #20202060;
+  border-collapse: collapse;
   
   aspect-ratio: 1 / 1;
 
