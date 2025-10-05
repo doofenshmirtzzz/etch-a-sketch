@@ -92,5 +92,21 @@ button:active {
   height: 500px;
   
   border: 4px dashed #202020;
+
+  display: flex;
+  flex-flow: row wrap;
+  
+  /* grid dimension set via js */
+  --n: 1;
 }
+
+#grid > div {
+  /* slightly painful without using css grid */
+
+  box-sizing: border-box;
+  border: 1px solid red;
+  
+  aspect-ratio: 1 / 1;
+
+  flex: 0 0 calc(100% / var(--n));
 }

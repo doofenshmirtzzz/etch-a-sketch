@@ -1,6 +1,9 @@
 function createGrid(size, target) {
   // !!! add a check for invalid size when adding user input
 
+  // set css var for proper grid display
+  setGridDimension(size, target);
+
   const totalCells = size * size;
 
   for (let i = 0; i < totalCells; i++) {
@@ -9,9 +12,13 @@ function createGrid(size, target) {
   }
 }
 
+function setGridDimension(n, target) {
+  target.style.setProperty('--n', n)
+}
+
 
 
 
 const gridContainer = document.getElementById('grid');
 
-createGrid(2, gridContainer);
+createGrid(5, gridContainer);
