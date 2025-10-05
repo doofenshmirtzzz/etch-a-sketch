@@ -31,6 +31,8 @@ body {
 h1 {
   margin: 0;
   margin-bottom: 32px;
+
+  /* center excluding the blinking underscore */
   margin-left: 1ch;
 }
 
