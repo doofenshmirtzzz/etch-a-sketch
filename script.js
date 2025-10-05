@@ -22,8 +22,10 @@ function changeColor(target, gradient) {
   // do not change if target is container
   if (target.id) return;
 
+  // get current background-color in hex format
   const currentColor = rgbToHex(target.style.backgroundColor || 'rgb(41, 41, 41)');
 
+  // set background-color to next in gradient
   target.style.backgroundColor = returnNextColor(gradient, currentColor)
 }
 
@@ -31,6 +33,7 @@ function returnNextColor(gradient, current) {
   const currentIndex = gradient.indexOf(current);
 
   if (gradient.length === currentIndex + 1) {
+    // if current color is last, return it
     return gradient[gradient.length - 1];
   } else {
     return gradient[currentIndex + 1];
@@ -38,6 +41,7 @@ function returnNextColor(gradient, current) {
 }
 
 function rgbToHex(rgb) {
+  // match 3 values
   const values = rgb.match(/\d+/g);
   let hex = '#';
 
@@ -49,7 +53,9 @@ function rgbToHex(rgb) {
 }
 
 function valueToHex(v) {
+  // convert string to int, convert back to string, but base16
   const hex = parseInt(v).toString(16);
+
   return (hex.length == 1) ? "0" + hex : hex;
 }
 
