@@ -98,9 +98,11 @@ button:active {
   display: flex;
   flex-flow: row wrap;
   
+  user-select: none;
+
   /* 
-    grid dimension set via js
-    used to set proper flex-basis on #grid > div 
+  grid dimension set via js
+  used to set proper flex-basis on #grid > div 
   */
   --n: 1;
 }
