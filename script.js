@@ -59,6 +59,32 @@ function valueToHex(v) {
   return (hex.length == 1) ? "0" + hex : hex;
 }
 
+function validateSize(val) {
+  return (val >= 2 && val <= 50);
+}
+
+function displaySize(target) {
+  target.textContent = size;
+}
+
+function changeSize(target) {
+  // if size isn't min or max at the moment, change it
+  if (validateSize(size - 1) && validateSize(size + 1)) {
+    switch (target.id) {
+      case 'size-up':
+        size++;
+        break;
+      case 'size-down':
+        size--;
+        break;
+    }
+
+    displaySize(sizeDisplay);
+  }
+
+  createGrid();
+}
+
 const gradient = ['#292929',
                   '#47453f',
                   '#656256',
@@ -75,6 +101,11 @@ const gridContainer = document.getElementById('grid'),
       buttonReset = document.getElementById('reset'),
       sizeDisplay = document.getElementById('size');
 
+let size = 12;
+
+createGrid();
+
 gridContainer.addEventListener('mouseover', (e) => changeColor(e.target, gradient));
 
-createGrid(6, gridContainer);
+buttonSizeUp.addEventListener('click', (e) => changeSize(e.target));
+buttonSizeDown.addEventListener('click', (e) => changeSize(e.target));
