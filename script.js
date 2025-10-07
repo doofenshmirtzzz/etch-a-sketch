@@ -104,3 +104,4 @@ gridContainer.addEventListener('mouseover', (e) => changeColor(e.target));
 
 buttonSizeUp.addEventListener('click', (e) => changeSize(e.target));
 buttonSizeDown.addEventListener('click', (e) => changeSize(e.target));
+buttonReset.addEventListener('click', () => createGrid());
