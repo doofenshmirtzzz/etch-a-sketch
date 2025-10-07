@@ -1,21 +1,21 @@
-function createGrid(size, target) {
+function createGrid() {
   // !!! add a check for invalid size when adding user input
 
   // set css var for proper grid display
-  setGridDimension(size, target);
+  setGridDimension(size);
 
   const totalCells = size * size;
 
   for (let i = 0; i < totalCells; i++) {
     const newDiv = document.createElement('div');
-    target.appendChild(newDiv);
+    gridContainer.appendChild(newDiv);
   }
 
   // add reseting the container for future 
 }
 
-function setGridDimension(n, target) {
-  target.style.setProperty('--n', n)
+function setGridDimension(n) {
+  gridContainer.style.setProperty('--n', n)
 }
 
 function changeColor(target, gradient) {
