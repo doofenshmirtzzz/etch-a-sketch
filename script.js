@@ -60,8 +60,8 @@ function valueToHex(v) {
   return (hex.length == 1) ? "0" + hex : hex;
 }
 
-function displaySize(target) {
-  target.textContent = size;
+function displaySize() {
+  sizeDisplay.textContent = size;
 }
 
 function changeSize(target) {
@@ -75,7 +75,7 @@ function changeSize(target) {
       break;
   }
 
-  displaySize(sizeDisplay);
+  displaySize();
   createGrid();
 }
 
