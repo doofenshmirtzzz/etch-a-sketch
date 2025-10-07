@@ -1,5 +1,6 @@
 function createGrid() {
-  // !!! add a check for invalid size when adding user input
+  // delete container contents
+  gridContainer.textContent = '';
 
   // set css var for proper grid display
   setGridDimension(size);
@@ -59,29 +60,22 @@ function valueToHex(v) {
   return (hex.length == 1) ? "0" + hex : hex;
 }
 
-function validateSize(val) {
-  return (val >= 2 && val <= 50);
-}
-
 function displaySize(target) {
   target.textContent = size;
 }
 
 function changeSize(target) {
   // if size isn't min or max at the moment, change it
-  if (validateSize(size - 1) && validateSize(size + 1)) {
-    switch (target.id) {
-      case 'size-up':
-        size++;
-        break;
-      case 'size-down':
-        size--;
-        break;
-    }
-
-    displaySize(sizeDisplay);
+  switch (target.id) {
+    case 'size-up':
+      if (size < 50) size++;
+      break;
+    case 'size-down':
+      if (size > 2) size--;
+      break;
   }
 
+  displaySize(sizeDisplay);
   createGrid();
 }
 
