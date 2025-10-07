@@ -19,7 +19,7 @@ function setGridDimension(n) {
   gridContainer.style.setProperty('--n', n)
 }
 
-function changeColor(target, gradient) {
+function changeColor(target) {
   // do not change if target is container
   if (target.id) return;
 
@@ -27,10 +27,10 @@ function changeColor(target, gradient) {
   const currentColor = rgbToHex(target.style.backgroundColor || 'rgb(41, 41, 41)');
 
   // set background-color to next in gradient
-  target.style.backgroundColor = returnNextColor(gradient, currentColor)
+  target.style.backgroundColor = returnNextColor(currentColor);
 }
 
-function returnNextColor(gradient, current) {
+function returnNextColor(current) {
   const currentIndex = gradient.indexOf(current);
 
   if (gradient.length === currentIndex + 1) {
@@ -100,7 +100,7 @@ let size = 12;
 createGrid();
 displaySize();
 
-gridContainer.addEventListener('mouseover', (e) => changeColor(e.target, gradient));
+gridContainer.addEventListener('mouseover', (e) => changeColor(e.target));
 
 buttonSizeUp.addEventListener('click', (e) => changeSize(e.target));
 buttonSizeDown.addEventListener('click', (e) => changeSize(e.target));
