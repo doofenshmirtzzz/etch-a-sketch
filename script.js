@@ -98,6 +98,7 @@ const gridContainer = document.getElementById('grid'),
 let size = 12;
 
 createGrid();
+displaySize();
 
 gridContainer.addEventListener('mouseover', (e) => changeColor(e.target, gradient));
 
