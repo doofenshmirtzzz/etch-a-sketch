@@ -69,7 +69,11 @@ const gradient = ['#292929',
                   '#fbf0c6',
 ]
 
-const gridContainer = document.getElementById('grid');
+const gridContainer = document.getElementById('grid'),
+      buttonSizeUp = document.getElementById('size-up'),
+      buttonSizeDown = document.getElementById('size-down'),
+      buttonReset = document.getElementById('reset'),
+      sizeDisplay = document.getElementById('size');
 
 gridContainer.addEventListener('mouseover', (e) => changeColor(e.target, gradient));
 
