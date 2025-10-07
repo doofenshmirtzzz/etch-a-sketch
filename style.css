@@ -118,3 +118,41 @@ button:active {
 
   flex: 0 0 calc(100% / var(--n));
 }
+
+.controls {
+  width: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.controls-section {
+  display: flex;
+  justify-content: center;
+
+  flex: 1;
+  
+}
+
+#size {
+  text-align: center;
+  font-size: 32px;
+  width: 3em;
+  margin: 4px 0;
+}
+
+#size-up {
+  transform: rotate(180deg);
+}
+
+.button-size {
+  padding: 0 16px 4px 16px;
+  height: 2em;
+  width: auto;
+}
+
+#reset {
+  height: 2em;
+}
